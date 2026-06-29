@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INNOGENESIS 2026 — NRI University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@700;900&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- AMBIENT BACKGROUND -->
+  <div class="ambient" aria-hidden="true">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <nav role="navigation" aria-label="Main navigation">
+    <div style="display:flex;align-items:center;gap:12px;cursor:pointer" onclick="showPage('home')">
+      <img src="logo.png" alt="NRI Institute Logo"
+        style="width:40px;height:40px;border-radius:8px;object-fit:contain;background:rgba(255,255,255,0.06);padding:3px;flex-shrink:0" />
+      <div class="nav-logo">
+        <span class="nav-logo-main">INNOGENESIS</span>
+        <span class="nav-logo-sub">NRI University · 2026</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+      <li><a onclick="showPage('about')" id="nav-about">About</a></li>
+      <li><a onclick="showPage('tracks')" id="nav-tracks">Tracks</a></li>
+      <li><a onclick="showPage('prizes')" id="nav-prizes">Prizes</a></li>
+      <li><a onclick="showPage('faq')" id="nav-faq">FAQ</a></li>
+      <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta"
+      onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeabndg3PMclRkptuaBg8ArEESos01Dyfmgm6iMD9xS3Vp79Q/viewform', '_blank')">Register
+      Now</button>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open navigation menu" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV DRAWER -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <a onclick="mobileNav('home')" id="mnav-home" class="active">Home</a>
+    <a onclick="mobileNav('about')" id="mnav-about">About</a>
+    <a onclick="mobileNav('tracks')" id="mnav-tracks">Tracks</a>
+    <a onclick="mobileNav('prizes')" id="mnav-prizes">Prizes</a>
+    <a onclick="mobileNav('faq')" id="mnav-faq">FAQ</a>
+    <a onclick="mobileNav('contact')" id="mnav-contact">Contact</a>
+    <button class="mobile-nav-cta"
+      onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeabndg3PMclRkptuaBg8ArEESos01Dyfmgm6iMD9xS3Vp79Q/viewform', '_blank')">Register
+      Now — ₹500/person</button>
+  </div>
+
+  <!-- ██████████████████ PAGE: HOME ██████████████████ -->
+  <div class="page active content" id="page-home">
+
+    <div class="hero">
+      <div class="hero-eyebrow">
+        <span class="live-dot" aria-hidden="true"></span>
+        Registrations are Live · Season 2026
+      </div>
+      <p class="hero-college">Dr. RVR NRI Institute of Technology · Agiripalli, A.P.</p>
+      <h1 class="hero-title">
+        <span class="hero-title-grad">INNOGENESIS</span>
+        <span class="hero-year">2026</span>
+      </h1>
+      <p class="hero-tagline">
+        Where <strong>innovation ignites.</strong> 24 hours. 500 builders.<br />
+        Cash prizes worth ₹5 Lakhs. One unforgettable event.
+      </p>
+      <div class="hero-date-banner" aria-label="Event dates">
+        <div class="hero-date-item">
+          <div class="hero-date-val">AUG 7</div>
+          <div class="hero-date-label">Opens</div>
+        </div>
+        <div class="hero-date-sep" aria-hidden="true"></div>
+        <div class="hero-date-item">
+          <div class="hero-date-val">24H</div>
+          <div class="hero-date-label">Sprint</div>
+        </div>
+        <div class="hero-date-sep" aria-hidden="true"></div>
+        <div class="hero-date-item">
+          <div class="hero-date-val">AUG 8</div>
+          <div class="hero-date-label">Closes</div>
+        </div>
+      </div>
+      <div class="countdown-strip" id="countdown" aria-label="Countdown to event"></div>
+      <div class="hero-ctas">
+        <button class="btn-primary"
+          onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeabndg3PMclRkptuaBg8ArEESos01Dyfmgm6iMD9xS3Vp79Q/viewform', '_blank')">Register
+          Now — ₹500/person</button>
+        <button class="btn-ghost" onclick="showPage('about')">Learn More →</button>
+      </div>
+      <div class="perks-row">
+        <span
+          style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,245,224,0.08);border:1px solid rgba(0,245,224,0.2);border-radius:40px;padding:12px 22px;font-size:15px;color:var(--cyan);font-weight:700"><i
+            class="ti ti-tools-kitchen-2" style="font-size:16px" aria-hidden="true"></i> Free Food</span>
+        <span
+          style="display:inline-flex;align-items:center;gap:8px;background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.2);border-radius:40px;padding:12px 22px;font-size:15px;color:var(--violet-light);font-weight:700"><i
+            class="ti ti-home" style="font-size:16px" aria-hidden="true"></i> Free Accommodation</span>
+        <span
+          style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,200,50,0.08);border:1px solid rgba(255,200,50,0.2);border-radius:40px;padding:12px 22px;font-size:15px;color:#ffcc44;font-weight:700"><i
+            class="ti ti-gift" style="font-size:16px" aria-hidden="true"></i> Swag &amp; Goodies</span>
+        <span
+          style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:40px;padding:12px 22px;font-size:15px;color:rgba(255,255,255,0.7);font-weight:700"><i
+            class="ti ti-sparkles" style="font-size:16px" aria-hidden="true"></i> &amp; More</span>
+      </div>
+    </div>
+
+    <div class="stats-bar" role="list" aria-label="Event statistics">
+      <div class="stat-item" role="listitem">
+        <div class="stat-num">₹5L</div>
+        <div class="stat-label">Prize Pool</div>
+      </div>
+      <div class="stat-item" role="listitem">
+        <div class="stat-num">24H</div>
+        <div class="stat-label">Hackathon</div>
+      </div>
+      <div class="stat-item" role="listitem">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Tracks</div>
+      </div>
+    </div>
+
+    <!-- Mini tracks preview -->
+    <section>
+      <div class="section-eyebrow">Tracks</div>
+      <h2 class="section-title">Two tracks.<br />Endless possibilities.</h2>
+      <p class="section-sub">Choose your battleground — structured problem statements or frame your own challenge.</p>
+      <div class="tracks-grid tracks-2col">
+        <div class="track-card">
+          <div class="track-num">TRACK 01 — GIVEN PROBLEM STATEMENT</div>
+          <div class="track-icon-wrap" style="background:rgba(0,245,224,0.1)"><i class="ti ti-list-check"
+              style="color:var(--cyan)" aria-hidden="true"></i></div>
+          <div class="track-name">Structured Track</div>
+          <div class="track-desc">Problem statements will be revealed on the day of the event. Domains: AI &amp; ML ·
+            Agentic AI &amp; Autonomous Systems · Embedded Systems &amp; IoT · Smart Energy &amp; Electrical Systems ·
+            Smart Infrastructure &amp; Civil Engineering · Robotics &amp; Automation · Healthcare &amp; Bio-informatics
+            · Sustainability &amp; Green Technologies · Open Innovation.</div>
+          <span class="track-prize">Cash prizes worth ₹5 Lakhs</span>
+        </div>
+        <div class="track-card">
+          <div class="track-num">TRACK 02 — OPEN INNOVATION</div>
+          <div class="track-icon-wrap" style="background:rgba(168,85,247,0.1)"><i class="ti ti-bulb"
+              style="color:var(--violet-light)" aria-hidden="true"></i></div>
+          <div class="track-name">Open Track</div>
+          <div class="track-desc">You define the problem. Frame your own problem statement and build the solution.
+            Domains: Hardware · AI-Based Solutions · Healthcare Innovation.</div>
+          <span class="track-prize">Cash prizes worth ₹5 Lakhs</span>
+        </div>
+      </div>
+      <div class="center-mt28">
+        <button class="btn-ghost" onclick="showPage('tracks')">View Track Details →</button>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ██████████████████ PAGE: ABOUT ██████████████████ -->
+  <div class="page content" id="page-about">
+    <section class="pg-section">
+      <div class="section-eyebrow">About</div>
+      <h2 class="section-title">What is INNOGENESIS?</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p><strong>INNOGENESIS 2026</strong> is NRI University's flagship intercollegiate hackathon — a 24-hour
+            marathon of ideation, prototyping, and execution. Held at Dr. RVR NRI Institute of Technology campus in
+            Agiripalli, the event brings together the brightest student innovators from across India.</p>
+          <p>The name says it all: <strong>INNO</strong> (innovation) + <strong>GENESIS</strong> (the origin, the
+            beginning). This is where your boldest idea gets its first breath of life — guided by industry mentors,
+            fueled by caffeine, backed by cash prizes worth up to <strong>₹5 Lakhs</strong>, and accompanied by exciting
+            entertainment.</p>
+          <p>Whether you're a solo coder, a design duo, or a full-stack team of four — INNOGENESIS is your stage. No
+            experience level required. Just bring the drive to build something real.</p>
+          <div class="btn-row">
+            <button class="btn-primary"
+              onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeabndg3PMclRkptuaBg8ArEESos01Dyfmgm6iMD9xS3Vp79Q/viewform', '_blank')">Register
+              Now</button>
+            <button class="btn-ghost" onclick="showPage('tracks')">Explore Tracks →</button>
+          </div>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="ti ti-calendar-event" aria-hidden="true"></i></div>
+            <div class="highlight-title">August 7–8, 2026</div>
+            <div class="highlight-desc">24-hour non-stop hackathon</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="ti ti-map-pin" style="color:var(--violet-light)"
+                aria-hidden="true"></i></div>
+            <div class="highlight-title">NRI Institute, Agiripalli</div>
+            <div class="highlight-desc">Vijayawada, Andhra Pradesh — fully in-person</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="ti ti-users" style="color:#80d080" aria-hidden="true"></i></div>
+            <div class="highlight-title">Teams of 2–4</div>
+            <div class="highlight-desc">Solo applications accepted — we'll help you find a team</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="ti ti-trophy" style="color:#ffaa55" aria-hidden="true"></i></div>
+            <div class="highlight-title">Cash Prizes ₹5 Lakhs+</div>
+            <div class="highlight-desc">Cash prizes, exciting awards, mentorship, networking & certificates</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="ti ti-school" style="color:var(--cyan)" aria-hidden="true"></i></div>
+            <div class="highlight-title">60+ Expert Mentors</div>
+            <div class="highlight-desc">Industry leaders from top tech firms on-site</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-icon"><i class="ti ti-device-laptop" style="color:var(--violet-light)"
+                aria-hidden="true"></i></div>
+            <div class="highlight-title">₹500 Per Person</div>
+            <div class="highlight-desc">Registration fee: ₹500 per participant. Meals, swag & WiFi included.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Organizing Committee Section -->
+    <section class="pg-section" style="border-top:1px solid var(--glass-border);margin-top:40px">
+      <div class="section-eyebrow">Committee</div>
+      <h2 class="section-title">Organizing Committee</h2>
+      <p class="section-sub" style="margin-bottom:40px">The dedicated team behind INNOGENESIS 2026 making the event
+        possible.</p>
+
+      <!-- Chief Patrons & Patrons -->
+      <div style="margin-bottom:48px">
+        <div class="section-eyebrow" style="font-size:10px;margin-bottom:20px;letter-spacing:0.15em">Chief Patrons &amp;
+          Patrons</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+          <!-- Chief Patrons -->
+          <div class="mentor-card" style="border-color:rgba(255,200,50,0.25);background:rgba(255,200,50,0.02)">
+            <div class="mentor-avatar" style="background:var(--grad)">VR</div>
+            <div class="mentor-name">Dr. R. Venkata Rao</div>
+            <div class="mentor-field" style="color:var(--cyan)">Chief Patron · Chancellor</div>
+          </div>
+          <div class="mentor-card" style="border-color:rgba(255,200,50,0.25);background:rgba(255,200,50,0.02)">
+            <div class="mentor-avatar" style="background:var(--grad)">SR</div>
+            <div class="mentor-name">Dr. K. R. S. Sambasiva Rao</div>
+            <div class="mentor-field" style="color:var(--cyan)">Chief Patron · Vice-Chancellor</div>
+          </div>
+          <!-- Patrons -->
+          <div class="mentor-card">
+            <div class="mentor-avatar" style="background:var(--grad2)">SR</div>
+            <div class="mentor-name">Dr. G. Sambasiva Rao</div>
+            <div class="mentor-field">Patron · Pro Vice-Chancellor</div>
+          </div>
+          <div class="mentor-card">
+            <div class="mentor-avatar" style="background:var(--grad2)">NB</div>
+            <div class="mentor-name">Dr. C. Naga Bhaskar</div>
+            <div class="mentor-field">Patron · Pro Vice-Chancellor</div>
+          </div>
+          <div class="mentor-card">
+            <div class="mentor-avatar" style="background:var(--grad2)">RR</div>
+            <div class="mentor-name">Dr. B. Raghava Rao</div>
+            <div class="mentor-field">Patron · Registrar</div>
+          </div>
+          <div class="mentor-card" style="border-color:rgba(124,58,237,0.3);background:rgba(124,58,237,0.03)">
+            <div class="mentor-avatar" style="background:linear-gradient(45deg,#7c3aed,#ff4500)">TS</div>
+            <div class="mentor-name">Sri M. Tej Sai</div>
+            <div class="mentor-field" style="color:var(--violet-light)">Patron · CEO</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conveners & Members -->
+      <div style="margin-bottom:48px">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px">
+          <!-- Conveners -->
+          <div>
+            <div class="section-eyebrow" style="font-size:10px;margin-bottom:20px;letter-spacing:0.15em">Conveners</div>
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div class="mentor-card" style="text-align:left;display:flex;align-items:center;gap:16px;padding:16px">
+                <div class="mentor-avatar" style="margin:0;background:var(--grad);flex-shrink:0">SR</div>
+                <div>
+                  <div class="mentor-name" style="margin-bottom:2px">Dr. K. V. Sambasiva Rao</div>
+                  <div class="mentor-field" style="color:var(--cyan)">Convener · Dean R&amp;D</div>
+                </div>
+              </div>
+              <div class="mentor-card" style="text-align:left;display:flex;align-items:center;gap:16px;padding:16px">
+                <div class="mentor-avatar" style="margin:0;background:var(--grad);flex-shrink:0">DS</div>
+                <div>
+                  <div class="mentor-name" style="margin-bottom:2px">Dr. D. Suneetha</div>
+                  <div class="mentor-field" style="color:var(--cyan)">Convener · Dean, School of Computer Studies</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Members -->
+          <div>
+            <div class="section-eyebrow" style="font-size:10px;margin-bottom:20px;letter-spacing:0.15em">Members</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+              <div class="mentor-card" style="text-align:left;display:flex;align-items:center;gap:14px;padding:14px">
+                <div class="mentor-avatar"
+                  style="margin:0;width:40px;height:40px;font-size:14px;background:var(--grad2);flex-shrink:0">MK</div>
+                <div>
+                  <div class="mentor-name" style="margin-bottom:2px">Dr. Ch. V. Murali Krishna</div>
+                  <div class="mentor-field">Professor</div>
+                </div>
+              </div>
+              <div class="mentor-card" style="text-align:left;display:flex;align-items:center;gap:14px;padding:14px">
+                <div class="mentor-avatar"
+                  style="margin:0;width:40px;height:40px;font-size:14px;background:var(--grad2);flex-shrink:0">MR</div>
+                <div>
+                  <div class="mentor-name" style="margin-bottom:2px">Dr. M. Venkateswara Rao</div>
+                  <div class="mentor-field">Professor</div>
+                </div>
+              </div>
+              <div class="mentor-card" style="text-align:left;display:flex;align-items:center;gap:14px;padding:14px">
+                <div class="mentor-avatar"
+                  style="margin:0;width:40px;height:40px;font-size:14px;background:var(--grad2);flex-shrink:0">VG</div>
+                <div>
+                  <div class="mentor-name" style="margin-bottom:2px">Prof. B. Venu Gopal</div>
+                  <div class="mentor-field">Associate Professor</div>
+                </div>
+              </div>
+              <div class="mentor-card" style="text-align:left;display:flex;align-items:center;gap:14px;padding:14px">
+                <div class="mentor-avatar"
+                  style="margin:0;width:40px;height:40px;font-size:14px;background:var(--grad2);flex-shrink:0">UR</div>
+                <div>
+                  <div class="mentor-name" style="margin-bottom:2px">Prof. M V P Uma Maheswara Rao</div>
+                  <div class="mentor-field">Associate Professor</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Co-ordinators -->
+      <div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px">
+          <!-- Faculty Co-ordinators -->
+          <div>
+            <div class="section-eyebrow" style="font-size:10px;margin-bottom:20px;letter-spacing:0.15em">Faculty
+              Co-ordinators</div>
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div class="mentor-card" style="text-align:left;display:flex;align-items:center;gap:16px;padding:16px">
+                <div class="mentor-avatar" style="margin:0;background:var(--grad);flex-shrink:0"><i class="ti ti-phone"
+                    aria-hidden="true"></i></div>
+                <div>
+                  <div class="mentor-name" style="margin-bottom:2px">Mr. P. Srinivas</div>
+                  <div class="mentor-field" style="font-weight:600"><a href="tel:9494361866"
+                      style="color:var(--cyan);text-decoration:none">9494361866</a></div>
+                </div>
+              </div>
+              <div class="mentor-card" style="text-align:left;display:flex;align-items:center;gap:16px;padding:16px">
+                <div class="mentor-avatar" style="margin:0;background:var(--grad);flex-shrink:0"><i class="ti ti-phone"
+                    aria-hidden="true"></i></div>
+                <div>
+                  <div class="mentor-name" style="margin-bottom:2px">Mr. K. Raga Sai</div>
+                  <div class="mentor-field" style="font-weight:600"><a href="tel:9491659594"
+                      style="color:var(--cyan);text-decoration:none">9491659594</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Student Co-ordinators -->
+          <div>
+            <div class="section-eyebrow" style="font-size:10px;margin-bottom:20px;letter-spacing:0.15em">Student
+              Co-ordinators</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+              <div class="mentor-card" style="text-align:left;display:flex;align-items:center;gap:14px;padding:14px">
+                <div class="mentor-avatar"
+                  style="margin:0;width:40px;height:40px;font-size:14px;background:var(--grad2);flex-shrink:0"><i
+                    class="ti ti-user" aria-hidden="true"></i></div>
+                <div>
+                  <div class="mentor-name" style="margin-bottom:2px">J. Sai Praneeth</div>
+                  <div class="mentor-field"><a href="tel:8143173691"
+                      style="color:var(--text-muted);text-decoration:none">8143173691</a></div>
+                </div>
+              </div>
+              <div class="mentor-card" style="text-align:left;display:flex;align-items:center;gap:14px;padding:14px">
+                <div class="mentor-avatar"
+                  style="margin:0;width:40px;height:40px;font-size:14px;background:var(--grad2);flex-shrink:0"><i
+                    class="ti ti-user" aria-hidden="true"></i></div>
+                <div>
+                  <div class="mentor-name" style="margin-bottom:2px">K. Bala Krishna</div>
+                  <div class="mentor-field"><a href="tel:7981372766"
+                      style="color:var(--text-muted);text-decoration:none">7981372766</a></div>
+                </div>
+              </div>
+              <div class="mentor-card" style="text-align:left;display:flex;align-items:center;gap:14px;padding:14px">
+                <div class="mentor-avatar"
+                  style="margin:0;width:40px;height:40px;font-size:14px;background:var(--grad2);flex-shrink:0"><i
+                    class="ti ti-user" aria-hidden="true"></i></div>
+                <div>
+                  <div class="mentor-name" style="margin-bottom:2px">Sk. Shafiya</div>
+                  <div class="mentor-field"><a href="tel:9550235962"
+                      style="color:var(--text-muted);text-decoration:none">9550235962</a></div>
+                </div>
+              </div>
+              <div class="mentor-card" style="text-align:left;display:flex;align-items:center;gap:14px;padding:14px">
+                <div class="mentor-avatar"
+                  style="margin:0;width:40px;height:40px;font-size:14px;background:var(--grad2);flex-shrink:0"><i
+                    class="ti ti-user" aria-hidden="true"></i></div>
+                <div>
+                  <div class="mentor-name" style="margin-bottom:2px">K. Lakshman</div>
+                  <div class="mentor-field"><a href="tel:7330930528"
+                      style="color:var(--text-muted);text-decoration:none">7330930528</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ██████████████████ PAGE: TRACKS ██████████████████ -->
+  <div class="page content" id="page-tracks">
+    <section class="pg-section">
+      <div class="section-eyebrow">Tracks</div>
+      <h2 class="section-title">Two tracks.<br />Your battleground.</h2>
+      <p class="section-sub">Two distinct formats — one with structured problem statements, one where you define the
+        challenge. Click a track to explore its domains.</p>
+      <div class="tracks-grid tracks-2col">
+
+        <!-- TRACK 1 -->
+        <div class="track-card" onclick="showTrackDomain('structured')" style="cursor:pointer">
+          <div class="track-num">TRACK 01 — GIVEN PROBLEM STATEMENT</div>
+          <div class="track-icon-wrap" style="background:rgba(0,245,224,0.1)"><i class="ti ti-list-check"
+              style="color:var(--cyan)" aria-hidden="true"></i></div>
+          <div class="track-name">Structured Track</div>
+          <div class="track-desc" style="margin-bottom:14px">Problem statements are revealed on the day of the event.
+            Teams choose from defined problems across <strong style="color:rgba(255,255,255,0.8)">9 domains</strong>.
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:14px">
+            <span class="track-prize">Cash prizes worth ₹5 Lakhs</span>
+            <span style="font-size:12px;color:var(--cyan);margin-left:auto">Explore Domains →</span>
+          </div>
+        </div>
+
+        <!-- TRACK 2 -->
+        <div class="track-card" onclick="showTrackDomain('open')" style="cursor:pointer">
+          <div class="track-num">TRACK 02 — OPEN INNOVATION</div>
+          <div class="track-icon-wrap" style="background:rgba(168,85,247,0.1)"><i class="ti ti-bulb"
+              style="color:var(--violet-light)" aria-hidden="true"></i></div>
+          <div class="track-name">Open Track</div>
+          <div class="track-desc" style="margin-bottom:14px">You define the problem. Frame your own problem statement
+            and build the solution across <strong style="color:rgba(255,255,255,0.8)">3 domains</strong>.</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:14px">
+            <span class="track-prize" style="border-color:rgba(168,85,247,0.3);color:var(--violet-light)">Cash prizes
+              worth ₹5 Lakhs</span>
+            <span style="font-size:12px;color:var(--violet-light);margin-left:auto">Explore Domains →</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- ██████████████████ PAGE: TRACK DOMAIN (structured) ██████████████████ -->
+  <div class="page content" id="page-track-structured">
+    <section class="pg-section">
+      <button onclick="showPage('tracks')"
+        style="background:none;border:1px solid rgba(255,255,255,0.12);border-radius:30px;color:var(--text-muted);padding:8px 18px;font-size:12px;cursor:pointer;font-family:'Space Grotesk',sans-serif;margin-bottom:36px;letter-spacing:0.04em;transition:border-color 0.2s,color 0.2s"
+        onmouseover="this.style.borderColor='var(--cyan)';this.style.color='var(--cyan)'"
+        onmouseout="this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='var(--text-muted)'">← Back to
+        Tracks</button>
+      <div class="section-eyebrow">Track 01 — Structured Track</div>
+      <h2 class="section-title">9 Domains.<br />Pick your battleground.</h2>
+      <p class="section-sub">Problem statements will be revealed on the day of the event. Choose from one of the defined
+        domains below.</p>
+      <div class="domain-grid domain-grid--3">
+        <div class="domain-card" data-border="rgba(0,245,224,0.18)"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor=this.dataset.border.replace(/[\d.]+\)$/,'0.5)')"
+          onmouseout="this.style.transform='';this.style.borderColor=this.dataset.border">
+          <i class="ti ti-cpu" style="font-size:30px;margin-bottom:12px;color:var(--cyan);display:block"
+            aria-hidden="true"></i>
+          <div style="font-size:15px;font-weight:700;margin-bottom:6px;color:#fff">AI &amp; ML</div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.6">Build intelligent systems using machine
+            learning, deep learning, or NLP to solve real-world challenges.</div>
+        </div>
+        <div class="domain-card" data-border="rgba(168,85,247,0.18)"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor=this.dataset.border.replace(/[\d.]+\)$/,'0.5)')"
+          onmouseout="this.style.transform='';this.style.borderColor=this.dataset.border">
+          <i class="ti ti-robot" style="font-size:30px;margin-bottom:12px;color:var(--cyan);display:block"
+            aria-hidden="true"></i>
+          <div style="font-size:15px;font-weight:700;margin-bottom:6px;color:#fff">Agentic AI &amp; Autonomous Systems
+          </div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.6">Design AI agents, autonomous pipelines,
+            and multi-agent systems that can reason and act independently.</div>
+        </div>
+        <div class="domain-card" data-border="rgba(80,200,80,0.18)"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor=this.dataset.border.replace(/[\d.]+\)$/,'0.5)')"
+          onmouseout="this.style.transform='';this.style.borderColor=this.dataset.border">
+          <i class="ti ti-antenna-chassis" style="font-size:30px;margin-bottom:12px;color:var(--cyan);display:block"
+            aria-hidden="true"></i>
+          <div style="font-size:15px;font-weight:700;margin-bottom:6px;color:#fff">Embedded Systems &amp; IoT</div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.6">Create connected hardware and
+            sensor-driven solutions using microcontrollers, edge AI, and IoT protocols.</div>
+        </div>
+        <div class="domain-card" data-border="rgba(255,200,50,0.18)"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor=this.dataset.border.replace(/[\d.]+\)$/,'0.5)')"
+          onmouseout="this.style.transform='';this.style.borderColor=this.dataset.border">
+          <i class="ti ti-bolt" style="font-size:30px;margin-bottom:12px;color:var(--cyan);display:block"
+            aria-hidden="true"></i>
+          <div style="font-size:15px;font-weight:700;margin-bottom:6px;color:#fff">Smart Energy &amp; Electrical Systems
+          </div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.6">Innovate in renewable energy, smart grids,
+            power electronics, and energy efficiency solutions.</div>
+        </div>
+        <div class="domain-card" data-border="rgba(100,150,255,0.18)"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor=this.dataset.border.replace(/[\d.]+\)$/,'0.5)')"
+          onmouseout="this.style.transform='';this.style.borderColor=this.dataset.border">
+          <i class="ti ti-building" style="font-size:30px;margin-bottom:12px;color:var(--cyan);display:block"
+            aria-hidden="true"></i>
+          <div style="font-size:15px;font-weight:700;margin-bottom:6px;color:#fff">Smart Infrastructure &amp; Civil
+            Engg.</div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.6">Address urban planning, structural
+            monitoring, water management, and smart city challenges.</div>
+        </div>
+        <div class="domain-card" data-border="rgba(255,100,100,0.18)"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor=this.dataset.border.replace(/[\d.]+\)$/,'0.5)')"
+          onmouseout="this.style.transform='';this.style.borderColor=this.dataset.border">
+          <i class="ti ti-mechanical-arm" style="font-size:30px;margin-bottom:12px;color:var(--cyan);display:block"
+            aria-hidden="true"></i>
+          <div style="font-size:15px;font-weight:700;margin-bottom:6px;color:#fff">Robotics &amp; Automation</div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.6">Build robots, automated systems, and
+            control solutions for manufacturing, logistics, or everyday use.</div>
+        </div>
+        <div class="domain-card" data-border="rgba(255,150,50,0.18)"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor=this.dataset.border.replace(/[\d.]+\)$/,'0.5)')"
+          onmouseout="this.style.transform='';this.style.borderColor=this.dataset.border">
+          <i class="ti ti-activity" style="font-size:30px;margin-bottom:12px;color:var(--cyan);display:block"
+            aria-hidden="true"></i>
+          <div style="font-size:15px;font-weight:700;margin-bottom:6px;color:#fff">Healthcare &amp; Bio-informatics
+          </div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.6">Solve medical diagnostics, patient
+            monitoring, genomic data, or health access problems with tech.</div>
+        </div>
+        <div class="domain-card" data-border="rgba(80,200,80,0.18)"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor=this.dataset.border.replace(/[\d.]+\)$/,'0.5)')"
+          onmouseout="this.style.transform='';this.style.borderColor=this.dataset.border">
+          <i class="ti ti-leaf" style="font-size:30px;margin-bottom:12px;color:var(--cyan);display:block"
+            aria-hidden="true"></i>
+          <div style="font-size:15px;font-weight:700;margin-bottom:6px;color:#fff">Sustainability &amp; Green
+            Technologies</div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.6">Tackle climate change, waste management,
+            clean water, sustainable agriculture, and eco-innovation.</div>
+        </div>
+        <div class="domain-card" data-border="rgba(255,255,255,0.12)"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor=this.dataset.border.replace(/[\d.]+\)$/,'0.5)')"
+          onmouseout="this.style.transform='';this.style.borderColor=this.dataset.border">
+          <i class="ti ti-bulb" style="font-size:30px;margin-bottom:12px;color:var(--cyan);display:block"
+            aria-hidden="true"></i>
+          <div style="font-size:15px;font-weight:700;margin-bottom:6px;color:#fff">Open Innovation</div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.6">Have an idea that doesn't fit neatly? This
+            is your domain — build anything that creates genuine value.</div>
+        </div>
+      </div>
+      <div class="center-mt40">
+        <button class="btn-primary"
+          onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeabndg3PMclRkptuaBg8ArEESos01Dyfmgm6iMD9xS3Vp79Q/viewform', '_blank')">Register
+          for This Track →</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- ██████████████████ PAGE: TRACK DOMAIN (open) ██████████████████ -->
+  <div class="page content" id="page-track-open">
+    <section class="pg-section">
+      <button onclick="showPage('tracks')"
+        style="background:none;border:1px solid rgba(255,255,255,0.12);border-radius:30px;color:var(--text-muted);padding:8px 18px;font-size:12px;cursor:pointer;font-family:'Space Grotesk',sans-serif;margin-bottom:36px;letter-spacing:0.04em;transition:border-color 0.2s,color 0.2s"
+        onmouseover="this.style.borderColor='var(--violet-light)';this.style.color='var(--violet-light)'"
+        onmouseout="this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='var(--text-muted)'">← Back to
+        Tracks</button>
+      <div class="section-eyebrow" style="color:var(--violet-light)">Track 02 — Open Track</div>
+      <h2 class="section-title">3 Domains.<br />You set the problem.</h2>
+      <p class="section-sub">No given statements. Frame your own challenge and build the solution. Pick from one of
+        these domains.</p>
+      <div class="domain-grid domain-grid--3">
+        <div class="domain-card" data-border="rgba(255,150,50,0.25)"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor=this.dataset.border.replace(/[\d.]+\)$/,'0.5)')"
+          onmouseout="this.style.transform='';this.style.borderColor=this.dataset.border">
+          <i class="ti ti-tool" style="font-size:40px;margin-bottom:16px;color:var(--violet-light);display:block"
+            aria-hidden="true"></i>
+          <div style="font-size:17px;font-weight:700;margin-bottom:8px;color:#fff">Hardware</div>
+          <div style="font-size:14px;color:var(--text-muted);line-height:1.7">Build physical prototypes — circuits,
+            embedded systems, IoT devices, or any hardware-centric solution you dream up.</div>
+        </div>
+        <div class="domain-card" data-border="rgba(0,245,224,0.25)"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor=this.dataset.border.replace(/[\d.]+\)$/,'0.5)')"
+          onmouseout="this.style.transform='';this.style.borderColor=this.dataset.border">
+          <i class="ti ti-brain" style="font-size:40px;margin-bottom:16px;color:var(--violet-light);display:block"
+            aria-hidden="true"></i>
+          <div style="font-size:17px;font-weight:700;margin-bottom:8px;color:#fff">AI-Based Solutions</div>
+          <div style="font-size:14px;color:var(--text-muted);line-height:1.7">Leverage AI, ML, or generative models to
+            solve a problem you've identified — no constraints on the domain.</div>
+        </div>
+        <div class="domain-card" data-border="rgba(255,100,100,0.25)"
+          onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor=this.dataset.border.replace(/[\d.]+\)$/,'0.5)')"
+          onmouseout="this.style.transform='';this.style.borderColor=this.dataset.border">
+          <i class="ti ti-heart" style="font-size:40px;margin-bottom:16px;color:var(--violet-light);display:block"
+            aria-hidden="true"></i>
+          <div style="font-size:17px;font-weight:700;margin-bottom:8px;color:#fff">Healthcare Innovation</div>
+          <div style="font-size:14px;color:var(--text-muted);line-height:1.7">Address any healthcare problem you're
+            passionate about — diagnostics, accessibility, mental health, or patient experience.</div>
+        </div>
+      </div>
+      <div class="center-mt40">
+        <button class="btn-primary"
+          onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeabndg3PMclRkptuaBg8ArEESos01Dyfmgm6iMD9xS3Vp79Q/viewform', '_blank')">Register
+          for This Track →</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- ██████████████████ PAGE: PRIZES ██████████████████ -->
+<div class="page content" id="page-prizes">
+  <section class="pg-section">
+    <div class="section-eyebrow">Prizes</div>
+    <h2 class="section-title">Up to ₹5 Lakhs.<br/>Multiple winners.</h2>
+    <p class="section-sub">Every track has its own prize pool. Plus special category awards, cloud credits, and internship offers.</p>
+
+    <div class="prizes-grid">
+      <div class="prize-card silver">
+        <div class="prize-position">Runner-up</div>
+        <div class="prize-medal">🥈</div>
+        <div class="prize-place">2nd Place</div>
+        <div class="prize-sub">Per track winner</div>
+      </div>
+      <div class="prize-card gold prize-featured">
+        <div class="prize-badge">🏆 Grand Champion</div>
+        <div class="prize-medal">🥇</div>
+        <div class="prize-place">1st Place</div>
+        <div class="prize-sub">Overall best project</div>
+      </div>
+      <div class="prize-card bronze">
+        <div class="prize-position">Third Place</div>
+        <div class="prize-medal">🥉</div>
+        <div class="prize-place">3rd Place</div>
+        <div class="prize-sub">Per track winner</div>
+      </div>
+    </div>
+
+      <div class="mt-50">
+        <div class="section-eyebrow" style="margin-bottom:20px">Special Awards</div>
+        <div class="special-prizes">
+          <div class="special-card"
+            style="position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(255,204,0,0.12),rgba(255,150,0,0.08));border:2px solid rgba(255,204,0,0.45);grid-column:span 2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;">
+            <div
+              style="position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,200,0,0.1),transparent 70%);pointer-events:none">
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rocket" width="48" height="48"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffcc44" fill="none" stroke-linecap="round"
+              stroke-linejoin="round" style="margin-bottom:10px;filter:drop-shadow(0 0 8px rgba(255,204,68,0.4))">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+              <path d="M7 14a6 6 0 0 0 -3 5a6 6 0 0 0 5 -3" />
+              <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+            </svg>
+            <div
+              style="font-family:'Orbitron',monospace;font-size:15px;font-weight:900;color:#ffcc44;letter-spacing:0.06em;margin-bottom:4px">
+              BEST STARTUP AWARD</div>
+            <div style="font-size:12px;color:rgba(255,200,0,0.75);font-weight:600;letter-spacing:0.04em">Winner Trophy +
+              Special Recognition</div>
+          </div>
+
+        <div class="special-card">
+          <div style="font-size:22px;margin-bottom:6px">🤖</div>
+          <div class="special-label">Best Use of AI/ML</div>
+        </div>
+        <div class="special-card">
+          <div style="font-size:22px;margin-bottom:6px">🎨</div>
+          <div class="special-label">Best UI/UX Design</div>
+        </div>
+        <div class="special-card">
+          <div style="font-size:22px;margin-bottom:6px">🌍</div>
+          <div class="special-label">Most Socially Impactful</div>
+        </div>
+          <div class="special-card">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-certificate" width="48"
+              height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--violet-light)" fill="none"
+              stroke-linecap="round" stroke-linejoin="round"
+              style="margin-bottom:6px;filter:drop-shadow(0 0 6px rgba(167,139,250,0.4))">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M15 15m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+              <path d="M13 17.5v4.5l2 -1.5l2 1.5v-4.5" />
+              <path d="M10 19h-5a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v5" />
+              <path d="M6 9l12 0" />
+              <path d="M6 13l6 0" />
+            </svg>
+            <div class="special-label" style="font-weight:700;color:var(--violet-light)">Internship Offer</div>
+            <div class="special-label">Top 5 Teams</div>
+          </div>
+          <div class="special-card">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-gift" width="48" height="48"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--cyan)" fill="none" stroke-linecap="round"
+              stroke-linejoin="round" style="margin-bottom:6px;filter:drop-shadow(0 0 6px rgba(245,158,11,0.4))">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M3 8m0 1a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1z" />
+              <path d="M12 8l0 13" />
+              <path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7" />
+              <path d="M12 8a3 3 0 0 1 -3 -3a3 3 0 0 1 6 0a3 3 0 0 1 -3 3z" />
+            </svg>
+            <div class="special-label" style="font-weight:700;color:var(--cyan)">Swag &amp; Goodies</div>
+            <div class="special-label">All Participants</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-48">
+        <div class="section-eyebrow" style="margin-bottom:20px">Entertainment &amp; More</div>
+        <p style="font-size:15px;color:var(--text-muted);margin-bottom:28px;line-height:1.7">It's not just hacking —
+          INNOGENESIS 2026 is a full experience. Take a break, have fun, and make memories.</p>
+        <div class="entertainment-grid">
+          <div class="ent-card">
+            <i class="ti ti-mood-laugh" style="color:var(--cyan);font-size:32px;margin-bottom:10px;display:block"
+              aria-hidden="true"></i>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Meme War</div>
+            <div style="font-size:12px;color:var(--text-muted)">Create the dankest memes — win prizes</div>
+          </div>
+          <div class="ent-card">
+            <i class="ti ti-balloon" style="color:var(--violet-light);font-size:32px;margin-bottom:10px;display:block"
+              aria-hidden="true"></i>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Leg Balloon</div>
+            <div style="font-size:12px;color:var(--text-muted)">Classic fun game between hacking sessions</div>
+          </div>
+          <div class="ent-card">
+            <i class="ti ti-bell" style="color:var(--cyan);font-size:32px;margin-bottom:10px;display:block"
+              aria-hidden="true"></i>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Buzzer Rounds</div>
+            <div style="font-size:12px;color:var(--text-muted)">Quiz nights and lightning challenges</div>
+          </div>
+          <div class="ent-card">
+            <i class="ti ti-music" style="color:var(--violet-light);font-size:32px;margin-bottom:10px;display:block"
+              aria-hidden="true"></i>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">DJ Night</div>
+            <div style="font-size:12px;color:var(--text-muted)">Unwind with music, lights & vibes</div>
+          </div>
+          <div class="ent-card">
+            <i class="ti ti-flame" style="color:var(--cyan);font-size:32px;margin-bottom:10px;display:block"
+              aria-hidden="true"></i>
+            <div style="font-size:14px;font-weight:600;margin-bottom:4px">Camp Fire</div>
+            <div style="font-size:12px;color:var(--text-muted)">Late-night bonding under the stars</div>
+          </div>
+        </div>
+      </div>
+      <div class="prize-info-box">
+        <i class="ti ti-info-circle" style="color:var(--cyan);font-size:22px;flex-shrink:0;margin-top:1px"
+          aria-hidden="true"></i>
+        <div>
+          <div style="font-size:14px;font-weight:600;margin-bottom:6px;color:rgba(255,255,255,0.9)">About the prize
+            distribution</div>
+          <div style="font-size:13px;color:var(--text-muted);line-height:1.7">Total cash prizes worth up to ₹5 Lakhs
+            distributed across track winners and special awards. All participants receive certificates. Top teams get
+            mentorship opportunities and networking access. Exciting prizes and goodies for all winners and runners-up.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ██████████████████ PAGE: FAQ ██████████████████ -->
+  <div class="page content" id="page-faq">
+    <section class="pg-section">
+      <div class="section-eyebrow">FAQ</div>
+      <h2 class="section-title">Got questions?<br />We've got answers.</h2>
+
+      <div class="faq-list" id="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Who can participate in INNOGENESIS?<i class="ti ti-plus"
+              aria-hidden="true"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Any currently enrolled undergraduate or postgraduate student from any college in
+              India. No restriction on year, branch, or specialization. You just need a valid college ID.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">What is the team size?<i class="ti ti-plus"
+              aria-hidden="true"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Teams can have 2 to 4 members. If you're applying solo, mark yourself as "looking
+              for a team" and we'll connect you with other solo participants before the event. Purely solo participation
+              is not permitted during the hackathon itself.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Is there a registration fee?<i class="ti ti-plus"
+              aria-hidden="true"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner">The registration fee is ₹500 per participant. This covers the 24-hour hackathon —
+              meals, snacks, beverages, WiFi, and event swag are all included throughout the event.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Can teams have members from different colleges?<i
+              class="ti ti-plus" aria-hidden="true"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Yes! Cross-college teams are allowed and encouraged. Each team member must
+              individually submit valid college identification during check-in on August 7.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Do we need to submit a project idea beforehand?<i
+              class="ti ti-plus" aria-hidden="true"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner">No need — all actual building happens on-site starting August 7.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">What should we bring?<i class="ti ti-plus"
+              aria-hidden="true"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Laptops, chargers, and a valid college ID are mandatory. Sleeping bags or pillows
+              if you plan to rest. We'll provide power strips, high-speed WiFi, and a dedicated sleeping area for all
+              participants.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">What technologies are allowed?<i class="ti ti-plus"
+              aria-hidden="true"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Any language, framework, or toolset of your choice. Cloud APIs, open-source
+              libraries, no-code tools — all fair game. The only rule: work done before the event starts does not count.
+              Everything must be built fresh.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Is accommodation provided for outstation participants?<i
+              class="ti ti-plus" aria-hidden="true"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Accommodation is available for every participant . Select this option during
+              registration. The campus dormitory is a 2-minute walk from the hackathon venue.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">How are projects judged?<i class="ti ti-plus"
+              aria-hidden="true"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Projects are evaluated on: Innovation & Originality (30%), Technical Execution
+              (25%), Real-world Impact (25%), Presentation & Demo (20%). Each track has its own panel of 2–3 expert
+              judges. Final evaluation is a 5-minute demo + 3-minute Q&A.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">When are results announced?<i class="ti ti-plus"
+              aria-hidden="true"></i></div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Results are announced at the Closing Ceremony on August 8 at 5:00 PM. All finalists
+              will present at 2:00 PM. Prize distribution happens immediately after the ceremony.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ██████████████████ PAGE: CONTACT ██████████████████ -->
+  <div class="page content" id="page-contact">
+    <section class="pg-section">
+      <div class="section-eyebrow">Contact</div>
+      <h2 class="section-title">We're here to help.</h2>
+      <p class="section-sub">Questions about registration, tracks, accommodation, or sponsorships? Reach out anytime.
+      </p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon-wrap"><i class="ti ti-mail" aria-hidden="true"></i></div>
+            <div>
+              <div class="contact-detail-title">General Inquiries</div>
+              <div class="contact-detail-val"><a
+                  href="mailto:innogenisis@nriuniversity.ac.in">hackathon5.nriit.edu.in</a></div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon-wrap"><i class="ti ti-phone" aria-hidden="true"></i></div>
+            <div>
+              <div class="contact-detail-title">Event Coordinator</div>
+              <div class="contact-detail-val">Mr.K.Raga Sai ~ 9491659594 </div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon-wrap"><i class="ti ti-map-pin" style="color:#ffaa55" aria-hidden="true"></i></div>
+            <div>
+              <div class="contact-detail-title">Venue</div>
+              <div class="contact-detail-val">Dr. RVR NRI Institute of Technology,<br />Agiripalli, Andhra Pradesh — 521
+                212</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon-wrap"><i class="ti ti-brand-instagram" style="color:#f0abfc"
+                aria-hidden="true"></i></div>
+            <div>
+              <div class="contact-detail-title">Follow for Updates</div>
+              <div class="contact-detail-val"><a href="#">@innogenisis_nri</a> &nbsp;·&nbsp; <a
+                  href="#">@nriuniversity_official</a></div>
+            </div>
+          </div>
+          <div class="map-wrap">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3820.5!2d80.7377657!3d16.6631257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35e0d94546c99f%3A0x94dc5f4441a45bab!2sDr.%20RVR%20NRI%20INSTITUTE%20OF%20TECHNOLOGY%20-%20DEEMED%20TO%20BE%20UNIVERSITY%2C%20Agiripalli!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%" height="220" style="border:0;filter:invert(90%) hue-rotate(180deg)" allowfullscreen=""
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="NRI Institute Location">
+            </iframe>
+          </div>
+          <a href="https://www.google.com/maps/place/Dr.+RVR+NRI+INSTITUTE+OF+TECHNOLOGY+-+DEEMED+TO+BE+UNIVERSITY,+Agiripalli/@16.6631257,80.7377657,15z/"
+            target="_blank" style="font-size:12px;color:var(--cyan);text-decoration:none;display:block;margin-top:8px">
+            <i class="ti ti-map-pin" style="color:var(--cyan);font-size:12px;margin-right:2px" aria-hidden="true"></i>
+            Open in Google Maps →
+          </a>
+        </div>
+        <div>
+          <div class="contact-form-box">
+            <div style="font-size:16px;font-weight:600;margin-bottom:20px">Send us a message</div>
+            <div class="form-group">
+              <label class="form-label" for="c-name">Your name</label>
+              <input class="form-input" id="c-name" type="text" placeholder="Full name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-email">Email</label>
+              <input class="form-input" id="c-email" type="email" placeholder="you@college.edu" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-subject">Subject</label>
+              <select class="form-select" id="c-subject">
+                <option value="">Select topic…</option>
+                <option>Registration help</option>
+                <option>Sponsorship enquiry</option>
+                <option>Accommodation</option>
+                <option>Track question</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-msg">Message</label>
+              <textarea class="form-textarea" id="c-msg" placeholder="Tell us how we can help…"></textarea>
+            </div>
+            <button class="form-submit" onclick="sendContactEmail()">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <div class="modal-icon"><i class="ti ti-circle-check" aria-hidden="true"></i></div>
+      <div class="modal-title" id="modal-title">You're In!</div>
+      <div class="modal-desc">
+        Thank you for registering for <strong style="color:rgba(255,255,255,0.9)">INNOGENESIS 2026</strong>!<br /><br />
+        A confirmation email has been sent to your college email. Follow us on Instagram <strong
+          style="color:var(--violet-light)">@innogenisis_nri</strong> for updates, workshops, and pre-event challenges.
+      </div>
+      <button class="modal-close" onclick="closeModal()">Back to Home</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-row">
+          <img src="logo.png" alt="NRI Institute Logo"
+            style="width:46px;height:46px;border-radius:10px;object-fit:contain;background:rgba(255,255,255,0.06);padding:4px;flex-shrink:0" />
+          <div>
+            <div class="footer-brand-name">INNOGENESIS</div>
+            <div class="footer-brand-sub">NRI University · 2026</div>
+          </div>
+        </div>
+        <div class="footer-brand-desc">NRI University's flagship intercollegiate hackathon. 24 hours of innovation,
+          mentorship, and building things that matter — August 7–8, 2026, Vijayawada.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Event</div>
+        <ul class="footer-links">
+          <li><a onclick="showPage('about')">About</a></li>
+          <li><a onclick="showPage('tracks')">Tracks</a></li>
+          <li><a onclick="showPage('prizes')">Prizes</a></li>
+          <li><a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeabndg3PMclRkptuaBg8ArEESos01Dyfmgm6iMD9xS3Vp79Q/viewform"
+              target="_blank">Register</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Resources</div>
+        <ul class="footer-links">
+          <li><a onclick="showPage('about')">Mentors &amp; Committee</a></li>
+          <li><a onclick="showPage('faq')">FAQ</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Connect</div>
+        <ul class="footer-links">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">WhatsApp Group</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-text">© 2026 INNOGENESIS · NRI University, Vijayawada. All rights reserved.</div>
+      <div class="footer-socials" aria-label="Social media links">
+        <div class="social-btn" title="Instagram"><i class="ti ti-brand-instagram" aria-label="Instagram"></i></div>
+        <div class="social-btn" title="LinkedIn"><i class="ti ti-brand-linkedin" aria-label="LinkedIn"></i></div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     INNOGENESIS 2026 — INTRO VIDEO OVERLAY
+     • Plays ONCE per browser session (sessionStorage flag)
+     • No loop, no replay on refresh
+     • Video ends → "Press any key or click to enter" prompt
+     • Any key / click / touch → fades out → site reveals
+     ═══════════════════════════════════════════════════════════ -->
+
+  <div id="intro-overlay">
+
+    <!-- Full-screen video -->
+    <video id="intro-video" playsinline webkit-playsinline muted>
+      <source src="4.mp4">
+    </video>
+
+    <!-- "Press any key" prompt — hidden until video ends -->
+    <div id="intro-prompt">
+      <div id="intro-prompt-inner">
+        <div class="prompt-pulse"></div>
+        <span class="prompt-text">Press any key or click to enter</span>
+      </div>
+    </div>
+
+    <!-- Skip button (visible after 2s) -->
+    <button id="intro-skip">Skip intro ›</button>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
