@@ -1,0 +1,6 @@
+{
+  "name": "Innogenesis 2026",
+  "description": "National Level Hackathon website for Innogenesis 2026, featuring tracks, prizes, committees, dynamic countdown, and mobile-responsive layouts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

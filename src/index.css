@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Orbitron", monospace;
+  --font-space: "Space Grotesk", sans-serif;
+}
+
+/* ── THEME PALETTES ── */
+:root {
+  font-size: 108%; /* Global proportional scaling to increase the complete website font size for better visibility */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Orbitron", monospace;
+  --font-space: "Space Grotesk", sans-serif;
+  
+  /* Theme variables default (dark) */
+  --bg-color: #09090b; /* Zinc-950 */
+  --text-color: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.65);
+  --accent-orange: #ea580c; /* Orange-600 */
+  --accent-amber: #f59e0b; /* Amber-500 */
+  --accent-violet: #7c3aed; /* Violet-600 */
+  --accent-violet-light: #a78bfa; /* Violet-400 */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --grid-color: rgba(255, 255, 255, 0.025);
+  --orb-opacity: 0.12;
+  --card-bg: rgba(9, 9, 11, 0.6);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --cursor-outline-color: #a78bfa;
+  --cursor-dot-color: #f59e0b;
+}
+
+/* When light-theme class is applied */
+.light-theme {
+  --bg-color: #f8fafc; /* Premium soft slate-50 background for eye comfort */
+  --text-color: #0f172a; /* Deep rich slate-900 for absolute contrast and crisp text */
+  --text-muted: rgba(15, 23, 42, 0.65); /* Elegant soft slate for descriptions */
+  --accent-orange: #2563eb; /* Vibrant high-visibility Royal Blue (replaces harsh orange) */
+  --accent-amber: #10b981; /* High-contrast emerald teal accent */
+  --accent-violet: #6366f1; /* Cool Indigo accent */
+  --accent-violet-light: #818cf8; /* Light Indigo helper */
+  --glass-bg: rgba(15, 23, 42, 0.02); /* Soft frosted slate glass */
+  --glass-border: rgba(15, 23, 42, 0.08); /* Minimalist slate-tint glass border */
+  --grid-color: rgba(15, 23, 42, 0.08); /* Perfectly visible, crisp light slate-grey grid lines */
+  --orb-opacity: 0.04; /* Delicate background ambient orb flow */
+  --card-bg: rgba(255, 255, 255, 0.9); /* Premium frosted pure white card surfaces */
+  --card-border: rgba(15, 23, 42, 0.06); /* Super fine border lines for clean structure */
+  --shadow-color: rgba(15, 23, 42, 0.04); /* Soft, natural slate-tinted drop shadows */
+  --cursor-outline-color: #2563eb; /* Custom royal blue cursor ring */
+  --cursor-dot-color: #10b981; /* Custom emerald green cursor center point */
+}
+
+/* ── CUSTOM RESET & CORE SCROLLBAR ── */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-space);
+  font-size: 1.18rem; /* Enhanced baseline body font size across entire site */
+  line-height: 1.8; /* Richer breathing room for superb reading comfort */
+  overflow-x: hidden;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-amber);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-orange);
+}
+
+/* Hide native cursor if supported */
+.custom-cursor-active, .custom-cursor-active * {
+  cursor: none !important;
+}
+
+/* ── SMOOTH ANIMATIONS ── */
+.animate-fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Helper for balancing page layouts */
+.min-height-hero {
+  min-height: calc(100vh - 96px); /* Header is h-24 (96px) now */
+}
+
+/* ── AMBIENT BACKGROUNDS (GRID & DRIFTING ORBS) ── */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at 50% 50%, black 40%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 40%, transparent 85%);
+  pointer-events: none;
+  z-index: 0;
+  transition: background-image 0.4s ease;
+}
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: var(--orb-opacity);
+  mix-blend-mode: screen;
+  will-change: transform;
+  transition: opacity 0.4s ease;
+}
+
+.orb1 {
+  top: -10%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--accent-violet) 0%, transparent 70%);
+  animation: floatOrb1 18s ease-in-out infinite alternate;
+}
+
+.orb2 {
+  bottom: 10%;
+  left: -10%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, var(--accent-orange) 0%, transparent 70%);
+  animation: floatOrb2 15s ease-in-out infinite alternate;
+}
+
+.orb3 {
+  top: 40%;
+  left: 35%;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, var(--accent-amber) 0%, transparent 70%);
+  animation: floatOrb3 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-80px, 60px) scale(1.15); }
+}
+
+@keyframes floatOrb2 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(70px, -50px) scale(1.1); }
+}
+
+@keyframes floatOrb3 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-40px, -30px) scale(1.2); }
+}
+
+/* ── CYBER CURSOR TARGET STYLES ── */
+.custom-cursor-dot-target {
+  width: 6px;
+  height: 6px;
+  background-color: var(--cursor-dot-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 100000;
+  pointer-events: none;
+  box-shadow: 0 0 8px var(--cursor-dot-color);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.custom-cursor-outline-target {
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid var(--cursor-outline-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 99999;
+  pointer-events: none;
+  /* Elastic lag tracking physics with custom transition curve */
+  transition: transform 0.08s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease, background-color 0.2s ease;
+}
+
+/* Click state pulse */
+.custom-cursor-outline-target.is-clicking {
+  transform: translate(-50%, -50%) scale(0.65);
+  border-color: #ef4444; /* High-intensity Red */
+  background-color: rgba(239, 68, 68, 0.25);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+}
+
+/* Theme-specific filters for the university logo.png to support light and dark theme seamlessness */
+.logo-theme-filter {
+  filter: none;
+  transition: filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* In the default dark theme, the black text parts of logo.png should become white while maintaining orange/amber */
+:root:not(.light-theme) .logo-theme-filter,
+body:not(.light-theme) .logo-theme-filter {
+  filter: invert(1) hue-rotate(180deg) saturate(1.2);
+}
+
+/* Global responsive element sizing */
+html, body, #root {
+  min-height: 100%;
+  width: 100%;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
